@@ -27,9 +27,10 @@ def isArrayPrimeIter(ary: list, i_size: int) -> bool:
         # Return: Bool is array is prime
         
         if num <= 1: return False
+        if num <= 3: return True # 2 and 3 are prime
         
         root = int(math.sqrt(num))
-        for i in range(math.sqrt(num)):
+        for i in range(root):
             if num % i == 0: return False
         return True
     
