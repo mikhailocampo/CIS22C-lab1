@@ -19,6 +19,9 @@ class TestPrimeArrayChecker(unittest.TestCase):
 
     def test_negative_numbers(self):
         self.assertFalse(isArrayPrimeIter([-2, -3, -5, -7], 4), "Array with negative numbers should return False.")
+    
+    def test_large_numbers(self):
+        self.assertTrue(isArrayPrimeIter([1000000007, 1000000009, 1000000021], 3), "Array with large primes should return True.")
 
 if __name__ == '__main__':
     unittest.main()

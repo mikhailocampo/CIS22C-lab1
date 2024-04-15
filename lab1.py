@@ -28,10 +28,13 @@ def isArrayPrimeIter(ary: list, i_size: int) -> bool:
         
         if num <= 1: return False
         if num <= 3: return True # 2 and 3 are prime
-        
-        root = int(math.sqrt(num))
-        for i in range(root):
-            if num % i == 0: return False
+        if num % 2 == 0 or num % 3 == 0:
+            return False # Eliminate even numbers and multiples of 3
+        i = 5
+        while i * i <= num:
+            if num % i == 0 or num % (i+2) == 0:
+                return False
+            i += 6
         return True
     
     for num in ary:
